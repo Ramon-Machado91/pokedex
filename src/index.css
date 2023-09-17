@@ -1,20 +1,23 @@
 
+/* Defina as cores de fundo para os temas claro e escuro */
+body.theme-light {
+  background-color: #eeeeee; /* Cor de fundo do tema claro */
+  color: #000000; /* Cor das letras para o tema claro */
+}
+
+body.theme-dark {
+  background-color: rgb(79, 75, 75); /* Cor de fundo do tema escuro */
+  color: #ffffff; /* Cor das letras para o tema escuro */
+}
+
+/* Outros estilos globais */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-body{
-    background-color: rgb(66, 66, 217);
-    font-family: 'Barlow', sans-serif;
-    color: rgb(92, 88, 88);
-}
-
-.navBar{
-    width: 100%;
+.navBar {
+  width: 100%;
 }

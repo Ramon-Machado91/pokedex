@@ -1,11 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import PokemonCard from "../components/PokemonCard/PokemonCard";
-import {Container,Grid,Button,Select,MenuItem,CircularProgress} from "@mui/material";
+import {
+  Container,
+  Grid,
+  Button,
+  Select,
+  MenuItem,
+  CircularProgress,
+} from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
-import "./home.css";
+import { ThemeContext, themes } from "../Contexts/Theme-context";
 
 const Home = ({ setPokemonData }) => {
   const [pokemons, setPokemons] = useState([]);
@@ -15,6 +22,7 @@ const Home = ({ setPokemonData }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const { theme } = useContext(ThemeContext);
 
   const ITEMS_PER_PAGE = 12;
 
@@ -105,18 +113,39 @@ const Home = ({ setPokemonData }) => {
     navigate("/profile");
   };
 
+  const homeStyles = {
+    backgroundColor: theme === themes.light ? "#3333aa" : "rgb(79, 75, 75)", // Azul escuro para light, cinza escuro para dark
+    transition: "background-color 0.3s ease-in-out",
+    minHeight: "100vh", //Manter o footer na parte inferior antes de carregar os pokemons
+    display: "flex",
+    flexDirection: "column",
+  };
+
+  const buttonStyles = {
+    width: "250px", 
+    margin: "10px auto", 
+    backgroundColor: "rgb(199, 30, 30)",
+    color: "white",
+  };
+
+  const selectStyles = {
+    width: "250px", 
+    margin: "10px auto", 
+    backgroundColor: "white",
+  };
+
   return (
-    <div>
+    <div style={homeStyles}>
       <NavBar
         pokemonFilter={filterPokemonsByType}
         handleSearchChange={handleSearchChange}
       />
 
-      <Container maxWidth="false" className="all-page">
+      <Container maxWidth="false" sx={homeStyles}>
         <Select
           value={selectedType}
           onChange={handleTypeChange}
-          style={{ marginBottom: "20px", backgroundColor: "white" }}
+          style={selectStyles}
           displayEmpty
         >
           <MenuItem value="" disabled>
@@ -133,13 +162,9 @@ const Home = ({ setPokemonData }) => {
         <Button
           variant="contained"
           onClick={handleSearchClick}
-          style={{
-            marginBottom: "20px",
-            marginLeft: "10px",
-            backgroundColor: "rgb(199, 30, 30)",
-          }}
+          style={buttonStyles}
         >
-          Buscar seu Pokemon pelo tipo
+          Buscar Pokémon
         </Button>
 
         <Grid container>
@@ -153,6 +178,10 @@ const Home = ({ setPokemonData }) => {
                     name={pokemon.name}
                     image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
                     types={pokemon.types}
+                    cardStyle={{
+                      backgroundColor: theme.cardBackground,
+                      color: theme.text,
+                    }}
                   />
                 </div>
               </Grid>
@@ -162,7 +191,7 @@ const Home = ({ setPokemonData }) => {
 
         <div style={{ textAlign: "center", margin: "20px" }}>
           <Button
-            style={{ backgroundColor: "rgb(199, 30, 30)" }}
+            style={buttonStyles}
             variant="contained"
             onClick={loadMorePokemons}
           >
