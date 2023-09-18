@@ -31,9 +31,9 @@ ___
 
 - Context API: foi utilizada para gerenciar o tema claro e escuro da aplicação, permitindo o compartilhamento desse estado entre os componentes.
 
--Mui Componentes- a fim de criar compenentes mais atraentes visualmente e facilitar a elaboração do designer responsivo para mobiles
+- Mui Componentes- a fim de criar compenentes mais atraentes visualmente e facilitar a elaboração do designer responsivo para mobiles
 
--Axios para requisição de API
+- Axios para requisição de API
 
 - React Router DOM: foi utilizado para a navegação entre as páginas da aplicação.
 
