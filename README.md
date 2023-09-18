@@ -5,11 +5,7 @@ ___
 
 ## Captura de tela
 
-<<<<<<< HEAD
-<img align="center" alt="pokedex" src=public/assets/pokedex2.gif>
-=======
-<img align="center" alt="gof of war ragnarök" src= public/assets/pokedex2.gif>
->>>>>>> 1eae4e3a49df1cb21f2607f85c054e253f74b17e
+<img src="/public/assets/pokedex.gif">
 ___
 
 ## Funcionalidades
