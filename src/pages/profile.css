@@ -1,61 +1,71 @@
-.pokeCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px;
-  transition: background-color 0.3s ease-in-out;
-}
+pokeCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .pokeCard-light {
+    background-color: #3333aa;
+    color: #ffffff;
+  }
+  
+  .pokeCard-dark {
+    background-color: rgb(79, 75, 75);
+    color: #000000;
+  }
+  
+  h3 {
+    font-size: 1.875rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-.pokeCard-light {
-  background-color: #3333aa;
-  color: #ffffff;
-}
+  h2{
+    text-align: center;
+  }
 
-.pokeCard-dark {
-  background-color: rgb(79, 75, 75);
-  color: #000000;
-}
-
-h3 {
-  font-size: 1.875rem;
-  margin-bottom: 20px;
-}
-
-.pokemon-card {
-  position: relative;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.pokemon-card-light {
-  background-color: #3333aa;
-  color: #ffffff;
-}
-
-.pokemon-card-dark {
-  background-color: rgb(79, 75, 75);
-  color: #000000;
-}
-
-.back-button {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: transparent;
-  color: #0073e6;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 30px;
-  line-height: 1;
-}
-
-.back-button:hover {
-  background-color: #c9ecff;
-}
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .pokemon-card {
+    position: relative;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .pokemon-card-light {
+    background-color: #3333aa;
+    color: #ffffff;
+  }
+  
+  .pokemon-card-dark {
+    background-color: rgb(79, 75, 75);
+    color: #000000;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    color: #0073e6;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 1;
+  }
+  
+  .back-button:hover {
+    background-color: #c9ecff;
+  }

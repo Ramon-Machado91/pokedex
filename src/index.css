@@ -10,7 +10,7 @@ body.theme-dark {
   color: #ffffff; /* Cor das letras para o tema escuro */
 }
 
-/* Outros estilos globais */
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
 
 * {
